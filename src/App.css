@@ -26,3 +26,17 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.tile{
+  
+}
+.table-header:hover{
+  cursor: pointer;
+}
+
+.searchbar{
+  margin:10px 0px 10px 0px;
+  width:500px;
+  float:left;
+}

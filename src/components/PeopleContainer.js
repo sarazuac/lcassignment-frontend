@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../App.css';
 
 class PeopleContainer extends Component {
 
@@ -22,16 +23,30 @@ componentDidMount(){
 
   render() {
     return (
-        <div>
+        <table className="table table-bordered">
+            <thead className="table-header">
+                <tr>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Mobile</th>
+                <th>Land-line</th>
+                <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
         {this.state.people.map((person) => {
           return(
-            <div className="tile" key={person.id} >
-              <h4>{person.name}</h4>
-              <p>{person.address}</p>
-            </div>
+            <tr className="tile" key={person.id} >
+              <td>{person.name}</td>
+              <td>{person.country}</td>
+              <td>{person.mobile}</td>
+              <td>{person.landline}</td>
+              <td>{person.address}</td>
+            </tr>
           )       
         })}
-      </div>
+        </tbody>
+      </table>
     )
   }
 }
