@@ -11,9 +11,11 @@ constructor(props){
 
     this.state = {
         people: [],
-        input:''
+        input:'',
+        order:'asc'
     }
-    this.searchFilter = this.searchFilter.bind(this)
+    this.searchFilter = this.searchFilter.bind(this);
+    this.handleSort = this.handleSort.bind(this);
 }
 
 componentDidMount(){
@@ -25,7 +27,89 @@ componentDidMount(){
     .catch(error => console.log(error))
 }
 handleSort(e) {
-console.log(e.target.id);
+
+    if(e.target.id =='name'){
+        var byName = this.state.people;
+        if(this.state.order=='asc'){
+            byName.sort(function(a,b) {
+                var x = a.name.toLowerCase();
+                var y = b.name.toLowerCase();
+                return x < y ? -1 : x > y ? 1 : 0;
+            });
+        
+            this.setState({people:byName,order:'desc'});
+        }else{
+            byName.reverse();
+            this.setState({people:byName,order:'asc'});
+        }
+        
+    }
+
+if(e.target.id =='country'){
+    var byCountry = this.state.people;
+    if(this.state.order=='asc'){
+        byCountry.sort(function(a,b) {
+            var x = a.country.toLowerCase();
+            var y = b.country.toLowerCase();
+            return x < y ? -1 : x > y ? 1 : 0;
+        });
+        this.setState({people:byCountry,order:'desc'});
+    }else{
+        byCountry.reverse();
+        this.setState({people:byCountry,order:'asc'});
+    }
+}
+
+if(e.target.id =='mobile'){
+    var byMobile = this.state.people;
+    if(this.state.order=='asc'){
+        byMobile.sort(function(a,b) {
+            var x = a.country.toLowerCase();
+            var y = b.country.toLowerCase();
+            return x < y ? -1 : x > y ? 1 : 0;
+        });
+        this.setState({people:byMobile,order:'desc'});
+    }else{
+        byMobile.reverse();
+        this.setState({people:byMobile,order:'asc'});
+    }
+}
+
+if(e.target.id =='landline'){
+    var byLandline = this.state.people;
+    if(this.state.order=='asc'){
+        byLandline.sort(function(a,b) {
+            var x = a.country.toLowerCase();
+            var y = b.country.toLowerCase();
+            return x < y ? -1 : x > y ? 1 : 0;
+        });
+        this.setState({people:byLandline,order:'desc'});
+    }else{
+        byLandline.reverse();
+        this.setState({people:byLandline,order:'asc'});
+    }
+}
+
+if(e.target.id =='address'){
+    var byAddress = this.state.people;
+    if(this.state.order=='asc'){
+        byAddress.sort(function(a,b) {
+            var x = a.country.toLowerCase();
+            var y = b.country.toLowerCase();
+            return x < y ? -1 : x > y ? 1 : 0;
+        });
+        this.setState({people:byAddress,order:'desc'});
+
+    }else{
+        var byAddress = this.state.people;
+        byAddress.reverse();
+        this.setState({people:byAddress,order:'asc'});
+    }
+}
+
+
+
+
 }
 
 searchFilter(e) {
