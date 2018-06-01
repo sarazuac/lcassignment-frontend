@@ -12,7 +12,7 @@ constructor(props){
 
 handleSave(e) {
     //console.log('click', this.props.data) ;
-    axios.post('http://localhost:3001/api/v1/filter', {
+    axios.post('https://lcassignment.herokuapp.com/api/v1/filter', {
         input: this.props.data.input,
         column: this.props.data.column,
         order: this.props.data.order

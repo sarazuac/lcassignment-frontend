@@ -23,7 +23,7 @@ constructor(props){
 }
 
 componentWillMount(){
-    axios.get('http://localhost:3001/api/v1/people')
+    axios.get('https://lcassignment.herokuapp.com/api/v1/people')
     .then(response => {
       //console.log(response)
       this.setState({people: response.data.data})
@@ -31,7 +31,7 @@ componentWillMount(){
     .catch(error => console.log(error));
 
 
-    axios.get('http://localhost:3001/api/v1/filter')
+    axios.get('https://lcassignment.herokuapp.com/api/v1/filter')
     .then(response => {
       
 
