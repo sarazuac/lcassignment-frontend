@@ -23,19 +23,14 @@ handleFilter(e) {
 }
 
 componentDidMount(){
-    // axios.get('http://localhost:3001/api/v1/people')
-    // .then(response => {
-    //   console.log(response)
-    //   this.setState({people: response.data.data})
-    // })
-    // .catch(error => console.log(error))
+
 }
 
 
   render() {
     return (
         <div>
-        <input className="searchbar"
+        <input className="searchbar" id="searchbar"
          onChange={this.handleFilter.bind(this)}
           type="text" 
           value={this.state.input} 

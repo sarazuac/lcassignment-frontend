@@ -25,19 +25,27 @@ constructor(props){
 componentWillMount(){
     axios.get('http://localhost:3001/api/v1/people')
     .then(response => {
-      console.log(response)
+      //console.log(response)
       this.setState({people: response.data.data})
     })
-    .catch(error => console.log(error))
-}
+    .catch(error => console.log(error));
 
-componentDidMount(){
+
     axios.get('http://localhost:3001/api/v1/filter')
     .then(response => {
-      console.log('filter',response)
-     // this.setState({people: response.data.data})
+      
+
+
+      this.setState({input: response.data.data.input,
+            column: response.data.data.column,
+            order: response.data.data.order,
+        })
+        document.getElementById("searchbar").value = response.data.data.input;
+        //console.log('filter',this.state);
     })
-    .catch(error => console.log(error))
+    .catch(error => console.log(error));
+
+
 }
 
 
@@ -142,7 +150,7 @@ searchFilter(e) {
     return (
         <div>
             <SearchContainer searchFilter={this.searchFilter}/>
-            <SaveFilter data = {this.state} handleSave={this.handleSave}/>
+            <SaveFilter data={this.state} handleSave={this.handleSave}/>
         
         <table className="table table-bordered">
             <thead className="table-header">
