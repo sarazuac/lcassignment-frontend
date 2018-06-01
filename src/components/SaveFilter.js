@@ -30,7 +30,7 @@ handleSave(e) {
   render() {
     return (
         <div>
-        <button className="SaveFilter btn btn-info"
+        <button className="SaveFilter btn btn-info btn-sm"
          onClick={this.handleSave.bind(this)}
           type="button">Save Filter</button>
       </div>

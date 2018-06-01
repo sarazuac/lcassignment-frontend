@@ -148,10 +148,12 @@ searchFilter(e) {
 
   render() {
     return (
-        <div>
-            <SearchContainer searchFilter={this.searchFilter}/>
-            <SaveFilter data={this.state} handleSave={this.handleSave}/>
-        
+        <div className="container-fluid">
+            <div className="row">
+            <div className="col-md-4"><SearchContainer searchFilter={this.searchFilter}/></div>
+            <div className="col-md-1"><SaveFilter data={this.state} handleSave={this.handleSave}/></div>
+            
+            </div>
         <table className="table table-bordered">
             <thead className="table-header">
                 <tr>

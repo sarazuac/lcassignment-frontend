@@ -37,6 +37,10 @@
 
 .searchbar{
   margin:10px 0px 10px 0px;
-  width:500px;
-  float:left;
+  width:100%;
+  /* float:left; */
+}
+
+.SaveFilter{
+  margin:10px 0px 10px 0px;
 }
